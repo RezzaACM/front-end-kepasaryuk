@@ -1,0 +1,26 @@
+.subnav-notif {
+    .header {
+        height: 40px;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 6px 0 0 6px;
+        box-shadow: 0px 1px 3px -1px rgba(189, 187, 189, 1);
+
+        >h1 {
+            font-size: 16px;
+        }
+
+        >a {
+            // display: inline-block !important;
+            float: right;
+            font-size: 21px;
+            color: black;
+
+            margin: -40px 10px 0px 0px;
+        }
+    }
+
+    .body-bar {
+        margin: 15px 0 0 0;
+    }
+}

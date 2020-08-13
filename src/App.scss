@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+button {
+  font-family: "Raleway", sans-serif;
+
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  // background-color: rgb(219, 218, 218);
+  color: white;
+  border-top: 1px solid rgb(190, 190, 190);
+
+  @media screen and (max-width: 426px) {
+    display: none;
+  }
+}
+
+.wrappe {
+  display: flex;
+  justify-content: space-between;
+  // padding: 10px;
+}
+
+/* Left and right column */
+.side {
+  width: 25%;
+  height: 90vh; // experiment with this value, try changing to 110vh
+  min-height: 200px;
+  // overflow: hidden;
+  // border: 1px solid;
+  margin-top: 40px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4%;
+}
+
+/* Middle column */
+.middle {
+  width: 73%;
+  margin-top: 70px;
+  height: 200vh;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 321px) {
+    // width: 100%;
+    margin-top: 100px;
+  }
+}

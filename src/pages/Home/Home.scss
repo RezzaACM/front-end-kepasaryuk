@@ -1,0 +1,74 @@
+$itemGrow: 1.2;
+$duration: 250ms;
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 80%);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    // border: 1px solid rgb(201, 0, 0);
+    min-height: 260px;
+    margin: -20px 0px;
+    scroll-behavior: smooth;
+
+    .active {
+        transform: scale(1, 1.1);
+        margin-top: 6px;
+
+    }
+
+    .item {
+        width: 93%;
+        position: relative;
+        display: grid;
+        height: 200px;
+        grid-template-columns: repeat(5, auto);
+        margin: 25px 0;
+        // margin-left: -12px;
+        transition: all 0.2s ease-in;
+
+        // border: 1px solid;
+        >img {
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            transition: all 1s ease-in;
+        }
+
+        &:hover {
+            // margin: 0 40px;
+            transform: scale(1, 1.1);
+        }
+    }
+}
+
+.button-carousel {
+    margin: -40px auto;
+    z-index: 9;
+
+    >button {
+        border: none;
+        outline: none;
+        background: rgb(139, 139, 139);
+        width: 20px;
+        height: 20px;
+        visibility: hidden;
+        margin-right: 6px;
+        border-radius: 10px;
+    }
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: rgb(141, 141, 141);
+    border-radius: 10px;
+}

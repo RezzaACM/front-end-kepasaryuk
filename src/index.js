@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import rootReducer from './modules/redux/reducer/globalReducer';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const storeRedux = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Provider store={storeRedux} >
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
