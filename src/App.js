@@ -6,6 +6,7 @@ import routes from './routes/appRoutes';
 import NavbarComponent from './components/NavbarComponent/NavbarComponent';
 import FooterComponent from './components/FooterComponent/FooterComponent';
 import SidebarComponent from './components/SidebarComponent/SidebarComponent';
+import CarouselComponent from './components/CarouselHeaderComponent/CarouselComponent';
 
 function App(props) {
 
@@ -39,10 +40,11 @@ function App(props) {
     <Fragment>
       {location === '/login' ? '' : <NavbarComponent />}
       <div id="wrappe" className="wrappe container">
-        <div className={`side ${isSticky ? 'sticky':''}`}>
+        <div className={`side ${isSticky ? 'sticky' : ''}`}>
           <SidebarComponent />
         </div>
         <div className="middle">
+          <CarouselComponent />
           <Switch>
             {routes.map((route, i) => <Route key={i} {...route} />)}
           </Switch>

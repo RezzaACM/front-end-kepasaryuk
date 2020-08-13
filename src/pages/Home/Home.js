@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 // import LogoutComponent from '../../components/LogoutComponent/LogoutComponent';
 import SplashScreen from '../../components/SplashScreen/SplashScreen';
-import './Home.scss'
-import { CiCircleFilled } from '@ant-design/icons';
+import './Home.scss';
+import CarouselComponent from '../../components/CarouselHeaderComponent/CarouselComponent';
 
 
 class Home extends Component {
@@ -36,26 +36,10 @@ class Home extends Component {
             return <SplashScreen />
         } else {
             return (
-                <div className="wrapper">
-                    <div className="item ">
-                        <img src="https://images.unsplash.com/photo-1597037722480-9da3b764e2e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1067&q=80" alt="sadwad" />
-                    </div>
-                    <div className="item">
-                        <img src="https://source.unsplash.com/11H1SSVcIxc/1600x900" alt="sadwad" />
-                    </div>
-                    <div className="item">
-                        <img src="https://images.unsplash.com/photo-1597037722480-9da3b764e2e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1067&q=80" alt="sadwad" />
-                    </div>
-                    <div className="item">
-                        <img src="https://images.unsplash.com/photo-1597037722480-9da3b764e2e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1067&q=80" alt="sadwad" />
-                    </div>
-                    <div className="button-carousel">
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                    </div>
-                </div>
+                <Fragment>
+                    <h1>This is Home</h1>
+                    {/* <CarouselComponent />< */}
+                </Fragment>
             );
         }
     }
