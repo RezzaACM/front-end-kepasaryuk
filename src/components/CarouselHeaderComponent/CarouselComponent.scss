@@ -1,0 +1,35 @@
+.item {
+    // width: 400px;
+    // height: 200px;
+
+    >img {
+        border-radius: 6px 6px 6px 6px !important;
+        width: 100%;
+        margin: auto !important;
+        // height: 70%;
+        height: 200px;
+        justify-content: space-between;
+    }
+}
+
+.owl-item{
+    transform: scale(0.8) !important;
+    transition: .6s ease;
+}
+
+.active.center {
+    transform: scale(1) !important;
+    -webkit-filter: grayscale(0);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
+}
+
+.active {
+    transform: scale(0.8) !important;
+    transition: .6s ease;
+
+}
+.cloned {
+    transform: scale(0.8) !important;
+    transition: .6s ease;
+}

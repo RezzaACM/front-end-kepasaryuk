@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import './NavbarComponent.scss'
-import LogoutComponent from '../LogoutComponent/LogoutComponent';
+// import LogoutComponent from '../LogoutComponent/LogoutComponent';
 import { BellOutlined, ShoppingCartOutlined, MessageOutlined, GithubOutlined, MenuOutlined } from '@ant-design/icons';
 import { Skeleton } from 'antd';
 import 'antd/dist/antd.css'
