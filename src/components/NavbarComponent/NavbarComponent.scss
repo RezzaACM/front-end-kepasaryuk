@@ -59,9 +59,13 @@
     .category {
         display: inline-block;
 
-        @media screen and (max-width: 1023px) {
+        @media screen and (min-width: 1023px) {
             // width: 450px;
             display: none;
+        }
+
+        @media screen and (max-width: 376px) {
+            margin-left: -15px;
         }
 
         >button {
@@ -71,6 +75,15 @@
             border: none;
             color: rgb(131, 218, 1);
             transition: all 0.2s ease-in;
+
+            @media screen and (max-width: 376px) {
+                // margin-left: -15px;
+                padding: 0;
+                margin-right: 3px;
+                width: fit-content;
+                font-size: 10px;
+            }
+
         }
 
         >button:hover {
