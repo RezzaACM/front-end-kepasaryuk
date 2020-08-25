@@ -39,12 +39,12 @@ function App(props) {
   return (
     <Fragment>
       {location === '/login' ? '' : <NavbarComponent />}
-      <div id="wrappe" className="wrappe container">
-        <div className={`side ${isSticky ? 'sticky' : ''}`}>
-          <SidebarComponent />
+      <div id="wrappe" className={location === '/login' ? '' : 'wrappe container'}>
+        <div className={` ${location === '/login' && isSticky === false ? '' : 'side sticky'}`}>
+          {location === '/login' ? '' : <SidebarComponent />}
         </div>
-        <div className="middle">
-          <CarouselComponent />
+        <div className={location === '/login' ? '' : 'middle'}>
+          {location === '/login' ? '' : <CarouselComponent />}
           <Switch>
             {routes.map((route, i) => <Route key={i} {...route} />)}
           </Switch>

@@ -66,8 +66,6 @@ const Login = (props) => {
 
   // lifecycle methode
   useEffect(() => {
-    if (props.match.path === '/login')
-      document.body.style.background = "#EBEBEB"
   });
 
   if (props.isLogin) {
@@ -77,8 +75,7 @@ const Login = (props) => {
   }
 
   return (
-    <div className="container">
-      <div className="card">
+      <div className="card-login">
         <div className="logo">
           <img
             src="https://image.freepik.com/free-vector/supermarket-logo-template_23-2148451518.jpg"
@@ -125,11 +122,10 @@ const Login = (props) => {
             >Sign in</button>
           </form>
         </div>
-        <div className="footer">
+        <div className="footer__card">
           <p>atau masuk dengan</p>
         </div>
       </div>
-    </div>
   );
 };
 

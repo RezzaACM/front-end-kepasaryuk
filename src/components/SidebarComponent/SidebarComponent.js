@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import './SidebarComponent.scss'
 import { Checkbox } from 'antd';
-import { Slider, Switch } from 'antd';
+import { Slider } from 'antd';
+import NumberFormat from 'react-number-format';
+import { InputNumber } from 'antd';
+
 
 const SidebarComponent = () => {
-    const [min, setIsMin] = useState(1000)
-    const [max, setIsMax] = useState(50000)
-    const [minForm, setIsMinForm] = useState(min)
-    const [maxForm, setIsMaxForm] = useState(max)
+    const [min, setMin] = useState(1000);
+    const [max, setMax] = useState(50000);
+    const [change, setChange] = useState(false)
+    const [minForm, setMinForm] = useState(1000);
+    const [maxForm, setMaxForm] = useState(50000);
 
     const onChange = (e) => {
         console.log(e);
@@ -23,24 +27,28 @@ const SidebarComponent = () => {
     ];
 
     const handleMin = (e) => {
-        setIsMinForm(e.target.value)
-        setIsMin(e.target.value)
-        // getValue(e.target.value)
-        // setIsMin(e.target.value);
+        setChange(true)
+        setMin(e.target.value)
     }
     const handleMax = (e) => {
-        setIsMaxForm(e.target.value)
-        setIsMax(e.target.value)
-        // console.log(e.target.value);
-        // getValue(e.target.value)
-        // setIsMax(e.target.value);
+        setChange(true)
+        setMax(e.target.value)
     }
 
     const getValue = (e) => {
-        setIsMinForm(e[0])
-        setIsMaxForm(e[1])
-        setIsMin(e[0])
-        setIsMax(e[1])
+        // setMin(e[0])
+        // setMax(e[1])
+        setMinForm(e[0])
+        setMaxForm(e[1])
+    }
+
+    const test = () => {
+        // console.log(minForm);
+        if (change === true) {
+            setChange(false)
+            setMinForm(min)
+            setMaxForm(max)
+        }
     }
 
     return (
@@ -68,16 +76,27 @@ const SidebarComponent = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="price">
-                            <input name="min" onChange={handleMin} value={minForm}></input>
-                            <input name="max" onChange={handleMax} value={maxForm}></input>
+                            <span style={{ position: 'absolute', paddingLeft: '10px' }}>Rp. </span>
+                            <input type="text"
+                                value={change ? min : minForm}
+                                min={1000}
+                                onChange={handleMin} />
+                            <span style={{ position: 'absolute', marginLeft: '77px' }}>Rp. </span>
+                            <input type="text"
+                                // value={max}
+                                value={change ? max : maxForm}
+                                onChange={handleMax} />
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="slider mt-4">
+                        <div onMouseEnter={test} className="slider mt-4">
                             <Slider
-                                value={[min, max]}
+                                step={100}
+                                // value={change ? [minForm, maxForm] : [min, max]}
+                                value={change ? [min, max] : [minForm, maxForm]}
+                                defaultValue={[minForm, maxForm]}
                                 onChange={getValue}
                                 min={1000} max={100000} range />
                         </div>

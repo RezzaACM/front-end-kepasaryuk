@@ -27,11 +27,11 @@ class Home extends Component {
 
 
     render() {
-        // if (!this.props.isLogin && !this.props.access_token) {
-        //     return (
-        //         <Redirect to={'/login'} />
-        //     )
-        // }
+        if (!this.props.isLogin && !this.props.access_token) {
+            return (
+                <Redirect to={'/login'} />
+            )
+        }
         if (this.state.isScreen === true) {
             return <SplashScreen />
         } else {
